@@ -92,58 +92,5 @@ layout: default
 </section>
 
 <!-- FAQs Section -->
-<!-- create a javascript accordian to pop out the answer to each FAQ on click -->
-<!-- pull the info from the data file called FAQ that we separate into each product type and output it in a loop -->
 
-<section class="p-5p text-center">
-    
-    <h3 class="">Frequently Asked Questions</h3>
-
-    <!-- General Facts Loop -->
-
-    {% assign faqs = site.data.faqs %}
-    {% assign generalFaqs = faqs | where: 'type', 'general' %}
-
-    <h2>General FAQs</h2>
-
-    {% for item in generalFaqs%}
-
-    <div>
-        <h3>{{item.question}}</h3>
-        <p>{{item.answer}}</p>
-    </div>
-
-    {% endfor %}
-
-    <!-- EBook Facts Loop -->
-
-    {% assign faqs = site.data.faqs %}
-    {% assign ebookFaqs = faqs | where: 'type', 'ebook' %}
-
-    <h2>E-Book FAQs</h2>
-    
-    {% for item in ebookFaqs%}
-
-    <div>
-        <h3>{{item.question}}</h3>
-        <p>{{item.answer}}</p>
-    </div>
-
-    {% endfor %}
-
-    <!-- Presets Facts Loop -->
-
-    {% assign faqs = site.data.faqs %}
-    {% assign presetFaqs = faqs | where: 'type', 'preset' %}
-
-    <h2>Presets FAQs</h2>
-    
-    {% for item in presetFaqs%}
-
-    <div>
-        <h3>{{item.question}}</h3>
-        <p>{{item.answer}}</p>
-    </div>
-
-    {% endfor %}
-</section>
+{% include faq.html %}
