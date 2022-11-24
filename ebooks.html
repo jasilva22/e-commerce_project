@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- intro/sales pitch section -->
+<!-- Intro/Sales Pitch Section -->
 
 <section class="grid md:grid-cols-2 p-5p items-center">
 
@@ -17,7 +17,7 @@ layout: default
 
 </section>
 
-<!-- all/most popular ebooks gallery -->
+<!-- All/Most Popular E-Books Gallery -->
 <!-- in the future if we had more than 9 products we would do pagination - using javascript -->
 
 <section class="bg-stone-100 p-5p">
@@ -43,26 +43,107 @@ layout: default
         {% endfor %}
 
     </div>
+</section>
 
-<!-- sneak peek carousel -->
+<!-- Sneak Peek Carousel -->
+<!-- use a for loop to pull content for each slide + image and output it from the frontmatter -->
+<!-- my variables are: title, description_html, price, product_path (img), alt, featured, sneakpeek_path, sneakpeek_alt and type -->
 
 <section class="p-5p">
-    <h2 class="text-center">a sneak peek</h2>
-    <p class="text-center">of what you'll see inside each ebook</p>
+    <h2 class="text-center text-4xl font-bold">a sneak peek</h2>
+    <p class="text-center italic">of what you'll see inside each ebook</p>
 
-    <div class="grid md:grid-cols-2">
+    <div class="grid md:grid-cols-2 pt-5p">
+
+        {% for ebook in featuredEbooks limit:1 %}
+        <!-- this will not be limit:1 once we have our javascript slider - want to have all ebooks cycle thru this - or limit to 9 or however many we decide -->
+
+        <!-- do we want this to pull from the front matter of this page specifically or have each individual ebook page have a separate image for sneak peek? and maybe a different description? in our notes we're pulling it from the front matter of this page - i remember she said that we'd do this for a reason but what was the reason?? -->
 
         <div class="relative">
-            <img src="https://images.unsplash.com/photo-1513045053232-9d9080b8924f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2048&q=80" alt="book" class="md:absolute object-cover w-full h-full">
+            <img src="{{ebook.sneakpeek_path}}" alt="book" class="md:absolute object-cover w-full h-full">
         </div>
 
         <div class="leading-loose p-5p">
-            {% for ebook in featuredEbooks limit:1 %}
                 <h2 class="">{{ebook.title}}</h2>
                 <p>{{ebook.description_html}}</p>
-            {% endfor %}
         </div>
+
+        {% endfor %}
 
     </div>
 </section>
 
+<!-- Testimonials Section -->
+
+<section class="h-64 grid items-center bg-stone-100">
+    
+    {% assign testimonials = site.data.testimonials %}
+    {% assign ebookTestimonials = testimonials | where: 'product-type', 'ebook' %}
+    {% for item in ebookTestimonials limit:6 %}
+
+    <div class="text-center">
+        <p>"{{item.quote}}"</p>
+        <p>- {{item.name}}</p>
+    </div>
+
+    {% endfor %}
+
+</section>
+
+<!-- FAQs Section -->
+<!-- create a javascript accordian to pop out the answer to each FAQ on click -->
+<!-- pull the info from the data file called FAQ that we separate into each product type and output it in a loop -->
+
+<section class="p-5p text-center">
+    
+    <h3 class="">Frequently Asked Questions</h3>
+
+    <!-- General Facts Loop -->
+
+    {% assign faqs = site.data.faqs %}
+    {% assign generalFaqs = faqs | where: 'type', 'general' %}
+
+    <h2>General FAQs</h2>
+
+    {% for item in generalFaqs%}
+
+    <div>
+        <h3>{{item.question}}</h3>
+        <p>{{item.answer}}</p>
+    </div>
+
+    {% endfor %}
+
+    <!-- EBook Facts Loop -->
+
+    {% assign faqs = site.data.faqs %}
+    {% assign ebookFaqs = faqs | where: 'type', 'ebook' %}
+
+    <h2>E-Book FAQs</h2>
+    
+    {% for item in ebookFaqs%}
+
+    <div>
+        <h3>{{item.question}}</h3>
+        <p>{{item.answer}}</p>
+    </div>
+
+    {% endfor %}
+
+    <!-- Presets Facts Loop -->
+
+    {% assign faqs = site.data.faqs %}
+    {% assign presetFaqs = faqs | where: 'type', 'preset' %}
+
+    <h2>Presets FAQs</h2>
+    
+    {% for item in presetFaqs%}
+
+    <div>
+        <h3>{{item.question}}</h3>
+        <p>{{item.answer}}</p>
+    </div>
+
+    {% endfor %}
+</section>
