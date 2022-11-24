@@ -1,0 +1,29 @@
+<footer class="border-t border-black">
+    <div class="h-full grid grid-cols-2 md:grid-cols-3 items-center">  
+      <!-- column -->
+        <div class="grid items-center justify-center border-r border-black h-full">
+          <a href="/index.html">
+            <h2 class="logo uppercase text-xl"> Logo </h2>
+          </a>
+        </div>
+      
+        <!-- column -->
+        <div class="self-end pb-4 md:block hidden">
+          <h4 class="text-center font-thin italic"> Copyright 2022 </h4>
+        </div>
+      
+        <!-- column -->
+        <div class="p-10 md:border-l border-black items-center">
+          <h4 class="uppercase"> Categories </h4>
+          <nav class="">
+            {% for item in site.archives | where: "nav-bar" == true limit: 5 %}
+       
+              <a href="{{item.url}}" class="font-extralight block hover:text-gray-400">{{item.title}}</a>
+      
+            {% endfor %}
+          </nav>
+        </div>
+    </div>
+    <div class="border-t border-black md:hidden text-center p-4"><h4 class="font-thin italic">Copyright 2022</h4></div>
+  </footer>
+  

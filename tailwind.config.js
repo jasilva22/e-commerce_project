@@ -6,7 +6,11 @@ module.exports = {
     './*.{html,md}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '5p': '5%',
+      },
+    },
   },
   plugins: [],
 }

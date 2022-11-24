@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<!-- intro/sales pitch section -->
+
+<section class="grid md:grid-cols-2 p-5p items-center">
+
+        <div>
+            <img src="https://images.unsplash.com/photo-1609895314390-cb64c186466a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZWJvb2tzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60" alt="ebook" class="object-cover w-full max-h-full">
+        </div>
+
+        <div class="leading-loose p-5p">
+            <h2 class="">Intro/Sales Pitch Here</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus recusandae beatae distinctio explicabo deleniti eveniet cupiditate repudiandae exercitationem quia. A illum minima quae, nobis suscipit ullam asperiores itaque blanditiis perferendis nisi obcaecati velit molestias nam sequi quo adipisci natus culpa.</p>
+        </div>
+
+</section>
+
+<!-- all/most popular ebooks gallery -->
+<!-- in the future if we had more than 9 products we would do pagination - using javascript -->
+
+<section class="bg-stone-100 p-5p">
+
+    {% assign ebooks = site.products-ebooks %}
+    {% assign featuredEbooks = ebooks %}
+
+    <h2 class="text-center">Most Popular Ebooks</h2>
+
+    <!-- div to make our ebook "cards" - includes img, title, price -->
+    <div class="p-5 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+        {% for ebook in featuredEbooks limit:9 %}
+            
+            <div class="bg-white p-5p">
+                <img src="{{ebook.product_path}}" alt="{{ebook.alt}}" class="object-cover w-full h-72" />
+                <div class="grid grid-cols-2 p-1">
+                    <h3> {{ebook.title}} </h3>
+                    <h3 class="text-right">${{ebook.price}}</h3>
+                </div>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+<!-- sneak peek carousel -->
+
+<section class="p-5p">
+    <h2 class="text-center">a sneak peek</h2>
+    <p class="text-center">of what you'll see inside each ebook</p>
+
+    <div class="grid md:grid-cols-2">
+
+        <div class="relative">
+            <img src="https://images.unsplash.com/photo-1513045053232-9d9080b8924f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2048&q=80" alt="book" class="md:absolute object-cover w-full h-full">
+        </div>
+
+        <div class="leading-loose p-5p">
+            {% for ebook in featuredEbooks limit:1 %}
+                <h2 class="">{{ebook.title}}</h2>
+                <p>{{ebook.description_html}}</p>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+

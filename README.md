@@ -26,5 +26,5 @@ Detailed dependencies listed in the [Gemfile](./Gemfile) and [package.json](./pa
 
 Run Jekyll & Tailwind CLI concurrently:
 ```
-$ npm run dev
+$ npm run dev:poll
 ```

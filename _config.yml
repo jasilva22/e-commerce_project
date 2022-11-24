@@ -1,2 +1,5 @@
 collections:
-  output: true
+  products-ebooks:
+    output: true
+  products-presets:
+    output: true

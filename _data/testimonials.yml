@@ -1,0 +1,6 @@
+- name: Lula
+  quote: this is the best
+  product-type: preset
+- name: Cat
+  quote: holy hell! this changed my life!! wooooo hooooooo
+  product-type: ebook
