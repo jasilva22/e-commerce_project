@@ -8,6 +8,7 @@ price: 22
 product_path: 
     https://cdn.shopify.com/s/files/1/0054/8614/9703/products/Summerbabe-16_1080x1080.png?v=1591385661
 alt: preset
+video_path: https://www.youtube.com/embed/-cyeGMkTYOk
 featured: true
 type: preset
 ---

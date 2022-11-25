@@ -1,12 +1,13 @@
 ---
 layout: default
+video_path: https://www.youtube.com/embed/-FYAJ1Jw2CI
 ---
 
 <!-- Intro/Sales Pitch Section -->
 
 <section class="grid md:grid-cols-2 p-5p items-center">
 
-        <div>
+        <div class="p-5p">
             <img src="https://images.unsplash.com/photo-1609895314390-cb64c186466a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZWJvb2tzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60" alt="ebook" class="object-cover w-full max-h-full">
         </div>
 
@@ -53,9 +54,9 @@ Then we’ll use javascript to make it into before / after slider. When you clic
 
 <section class="p-5p">
 
-    <div class="grid grid-cols-8 pt-5p gap-4">
+    <div class="grid grid-cols-8 pt-5p gap-4 items-center">
 
-        {% for example in featuredPreset limit:4 %}
+        {% for example in featuredPreset limit:1 %}
 
         <div class="col-span-1">
             <p><a href="">{{example.title}}</a></p>
@@ -63,7 +64,9 @@ Then we’ll use javascript to make it into before / after slider. When you clic
 
         <div class="col-span-7">
             <img src="{{example.before_path}}" alt="example.beforealt" class="object-cover w-full h-[50vh]">
-            <img src="{{example.after_path}}" alt="example.afteralt" class="object-cover w-full h-[50vh]">
+            <!-- <img src="{{example.after_path}}" alt="example.afteralt" class="object-cover w-full h-[50vh]"> -->
+
+            <!-- hiding this image and limiting loop to one until we have javascript info -->
         </div>
 
         {% endfor %}
@@ -71,17 +74,21 @@ Then we’ll use javascript to make it into before / after slider. When you clic
     </div>
 </section>
 
+<!-- Video How-to Section -->
+
+{% include video.html %}
+
 <!-- Testimonials Section -->
 
 <section class="h-64 grid items-center bg-stone-100">
     
     {% assign testimonials = site.data.testimonials %}
-    {% assign ebookTestimonials = testimonials | where: 'product-type', 'ebook' %}
-    {% for item in ebookTestimonials limit:6 %}
+    {% assign presetTestimonials = testimonials | where: 'product-type', 'preset' %}
+    {% for testimonial in presetTestimonials limit:6 %}
 
     <div class="text-center">
-        <p>"{{item.quote}}"</p>
-        <p>- {{item.name}}</p>
+        <p>"{{testimonial.quote}}"</p>
+        <p>- {{testimonial.name}}</p>
     </div>
 
     {% endfor %}

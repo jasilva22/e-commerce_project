@@ -13,6 +13,7 @@ before_path:
 beforealt: 
 after_path: 
 afteralt: 
+video_path: https://www.youtube.com/embed/-cyeGMkTYOk
 featured: true
 type: preset
 ---

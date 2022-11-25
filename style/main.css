@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
  
-.button {
-    @apply inline-block p-6 bg-blue-600 text-white hover:bg-blue-800 transition;
+@layer components {
+    .button {
+        @apply inline-block p-6 bg-blue-600 text-white hover:bg-blue-800 transition;
+    }
+}
+
+h2 {
+    @apply font-nunito;
 }

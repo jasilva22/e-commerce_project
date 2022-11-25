@@ -6,7 +6,7 @@ layout: default
 
 <section class="grid md:grid-cols-2 p-5p items-center">
 
-        <div>
+        <div class="p-5p">
             <img src="https://images.unsplash.com/photo-1609895314390-cb64c186466a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZWJvb2tzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60" alt="ebook" class="object-cover w-full max-h-full">
         </div>
 
@@ -80,11 +80,11 @@ layout: default
     
     {% assign testimonials = site.data.testimonials %}
     {% assign ebookTestimonials = testimonials | where: 'product-type', 'ebook' %}
-    {% for item in ebookTestimonials limit:6 %}
+    {% for testimonial in ebookTestimonials limit:6 %}
 
     <div class="text-center">
-        <p>"{{item.quote}}"</p>
-        <p>- {{item.name}}</p>
+        <p>"{{testimonial.quote}}"</p>
+        <p>- {{testimonial.name}}</p>
     </div>
 
     {% endfor %}

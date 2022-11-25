@@ -1,3 +1,115 @@
 ---
 layout: default
 ---
+
+<!-- product showcase - title, description, buy button -->
+
+<section class="grid md:grid-cols-2 p-5p">
+
+        <div class="relative">
+            <img src="{{page.product_path}}" alt="{{page.alt}}" class="md:absolute object-cover object-center w-full h-72 md:h-full">
+        </div>
+
+        <div class="leading-loose p-5p">
+            <h2 class="">{{page.title}}</h2>
+            <p>{{page.description_html}}</p>
+            <a href="#" class="inline-block px-9 py-3 bg-black text-white mt-4 md:mt-0 hover:bg-yellow-900 hover:opacity-95 hover:text-white uppercase tracking-wide">Buy Now</a>
+        </div>
+      		
+</section>
+
+<!-- Sneak Peek Section -->
+<!-- use a for loop to pull content for each slide + image and output it from the frontmatter -->
+
+<section class="p-5p bg-stone-100">
+    <h2 class="text-center text-4xl font-bold">a sneak peek</h2>
+    <p class="text-center italic">of what you'll see inside each ebook</p>
+
+    <div class="grid md:grid-cols-2 pt-5p">
+
+        <!-- this will not be limit:1 once we have our javascript slider - want to have all ebooks cycle thru this - or limit to 9 or however many we decide -->
+
+        <!-- do we want this to pull from the front matter of this page specifically or have each individual ebook page have a separate image for sneak peek? and maybe a different description? in our notes we're pulling it from the front matter of this page - i remember she said that we'd do this for a reason but what was the reason?? -->
+
+        <div class="relative">
+            <img src="{{page.sneakpeek_path}}" alt="{{page.sneakpeek_alt}}" class="md:absolute object-cover w-full h-full">
+        </div>
+
+        <div class="leading-loose p-5p">
+                <h2 class="">{{page.title}}</h2>
+                <p>{{page.description_html}}</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Book Outline Section -->
+
+<section class="p-5p">
+    <div>
+        <h3 class="text-center font-semibold pb-6">Book Outline</h3>
+    </div>
+    <div class="grid md:grid-cols-2 leading-loose">
+        <div>
+            <p>{{page.text1_html}}</p>
+        </div>
+        <div>
+            <p>{{page.text2_html}}</p>
+        </div>
+    </div>
+</section>
+
+<!-- Review Carousel -->
+<!-- will be using stamped.io but need a shopify url first to link it to -->
+
+
+<section class="h-64 grid items-center bg-stone-100">
+    
+    {% assign testimonials = site.data.testimonials %}
+    {% assign ebookTestimonials = testimonials | where: 'product-type', 'ebook' %}
+    {% for testimonial in ebookTestimonials limit:6 %}
+
+    <div class="text-center">
+        <p>"{{testimonial.quote}}"</p>
+        <p>- {{testimonial.name}}</p>
+    </div>
+
+    {% endfor %}
+
+</section>
+
+<!-- Related/More eBooks you might like -->
+
+<section class="p-5p">
+
+    {% assign ebooks = site.products-ebooks %}
+    {% assign featuredEbooks = ebooks %}
+
+    <h2 class="text-center pb-6">Most Popular Ebooks</h2>
+    
+    <div class="pb-6 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+    {% for ebook in featuredEbooks offset:1 limit:3 %}
+
+        <a href="{{ebook.url}}">
+
+            <!-- div to make our ebook "cards" - includes img, title, price -->
+
+            <div class="bg-stone-100 p-5p">
+                <img src="{{ebook.product_path}}" alt="{{ebook.alt}}" class="object-cover w-full h-72" />
+                <div class="grid grid-cols-2 p-1">
+                    <h3> {{ebook.title}} </h3>
+                    <h3 class="text-right">${{ebook.price}}</h3>
+                </div>
+            </div>
+
+        </a>
+
+        {% endfor %}
+    </div>
+
+    <div class="leading-loose pt-6">
+        <a href="{{ebook.url}}" class="text-center block px-9 py-3 bg-black text-white mt-4 md:mt-0 hover:bg-yellow-900 hover:opacity-95 hover:text-white uppercase tracking-wide">Explore all eBooks</a>
+    </div>
+
+</section>
