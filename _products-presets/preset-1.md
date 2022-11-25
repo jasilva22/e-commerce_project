@@ -8,6 +8,11 @@ price: 22
 product_path: 
     https://cdn.shopify.com/s/files/1/0054/8614/9703/products/Summerbabecopy2_1080x1080.png?v=1590945330
 alt: preset
+before_path: 
+    https://cdn.shopify.com/s/files/1/0054/8614/9703/products/Happy_New_Year-78_1000x.jpg?v=1590945330
+beforealt: 
+after_path: 
+afteralt: 
 featured: true
 type: preset
 ---
