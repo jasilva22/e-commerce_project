@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: '5%',
     },
     extend: {
       spacing: {
@@ -27,7 +27,7 @@ module.exports = {
     },
     fontFamily: {
       serif: ['Merriweather', 'serif'],
-      nunito: ['Nunito Sans'],
+      nunito: ['Nunito Sans', 'sans-serif'],
       sans: ['Montserrat', 'sans-serif'],
     },
   },

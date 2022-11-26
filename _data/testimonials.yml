@@ -4,3 +4,9 @@
 - name: Cat
   quote: holy hell! this changed my life!! wooooo hooooooo
   product-type: ebook
+- name: Carly
+  quote: such a good protector
+  product-type: preset
+- name: Dan
+  quote: did it do the thing?
+  product-type: ebook

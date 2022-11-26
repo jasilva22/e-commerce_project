@@ -8,9 +8,9 @@
     }
 }
 
-h2 {
+/* h2 {
     @apply font-nunito;
-}
+} */
 
 .hidden {
     display: none;
@@ -36,3 +36,20 @@ h2 {
       overflow: hidden;
       padding: 0;
   }
+
+ .slider-container {
+     max-width: calc(100vw - 10rem);
+ }
+
+  .slick-next::before, .slick-prev::before {
+    font-family: slick;
+    font-size: 36px;
+    line-height: 1;
+    opacity: .75;
+    color: black;
+}
+
+/* .slick-next::before, .slick-prev::before {
+    ...
+    color: rgb(90, 90, 90);
+} */

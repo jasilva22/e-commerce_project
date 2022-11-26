@@ -1,0 +1,21 @@
+<!-- Testimonials Section -->
+
+<section class="h-64 grid items-center bg-stone-100">
+    
+    <div class="slider-container mx-auto">
+    
+        {% assign testimonials = site.data.testimonials %}
+        {% assign ebookTestimonials = testimonials | where: 'product-type', 'ebook' %}
+        <!-- if you wanted to output testimonials for BOTH ebook and preset at the same time you can get rid of the | where: 'product-type', 'ebook' part completely and it will pull in both -->
+        {% for item in ebookTestimonials limit:6 %}
+
+        <div class="text-center slider-item">
+            <p>"{{item.quote}}"</p>
+            <p>- {{item.name}}</p>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
