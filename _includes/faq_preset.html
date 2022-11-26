@@ -1,0 +1,21 @@
+<section class="p-5p text-center">
+    
+    <h3 class="">Frequently Asked Questions</h3>
+
+    <!-- Presets Facts Loop -->
+
+    {% assign faqs = site.data.faqs %}
+    {% assign presetFaqs = faqs | where: 'type', 'preset' %}
+
+    <h2>Presets FAQs</h2>
+    
+    {% for item in presetFaqs%}
+
+    <div>
+        <h3>{{item.question}}</h3>
+        <p>{{item.answer}}</p>
+    </div>
+
+    {% endfor %}
+
+</section>

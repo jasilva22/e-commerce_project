@@ -1,16 +1,17 @@
 ---
 layout: default
+title: Shop All eBooks
 ---
 
 <!-- Intro/Sales Pitch Section -->
 
 <section class="grid md:grid-cols-2 p-5p items-center">
 
-        <div class="p-5p">
+        <div class="">
             <img src="https://images.unsplash.com/photo-1609895314390-cb64c186466a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZWJvb2tzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60" alt="ebook" class="object-cover w-full max-h-full">
         </div>
 
-        <div class="leading-loose p-5p">
+        <div class="leading-loose ml-12">
             <h2 class="">Intro/Sales Pitch Here</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus recusandae beatae distinctio explicabo deleniti eveniet cupiditate repudiandae exercitationem quia. A illum minima quae, nobis suscipit ullam asperiores itaque blanditiis perferendis nisi obcaecati velit molestias nam sequi quo adipisci natus culpa.</p>
         </div>
@@ -28,7 +29,7 @@ layout: default
     <h2 class="text-center">Most Popular Ebooks</h2>
 
     <!-- div to make our ebook "cards" - includes img, title, price -->
-    <div class="p-5 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
 
         {% for ebook in featuredEbooks limit:9 %}
             
@@ -93,4 +94,4 @@ layout: default
 
 <!-- FAQs Section -->
 
-{% include faq.html %}
+{% include faq_ebook.html %}

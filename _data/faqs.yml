@@ -7,12 +7,12 @@
 - question: what's your jam?
   answer: strawberry
   type: preset
-- question: how do i do this thing? 
-  answer: no idea, ask a friend
+- question: what's the word? 
+  answer: sleep
   type: general
-- question: what time do you close?
-  answer: never, party all night
+- question: how do we do the thing?
+  answer: we did the thing
   type: ebook
-- question: what's your jam?
-  answer: strawberry
+- question: what's your favorite jam?
+  answer: blackberry
   type: preset

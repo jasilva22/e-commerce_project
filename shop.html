@@ -58,9 +58,7 @@ seo:
     <!-- shop all ebooks button -->
 
     <div class="leading-loose p-5p">
-        <h2 class="">{{ebook.title}}</h2>
-        <p>{{ebook.description_html}}</p>
-        <a href="#" class="inline-block px-9 py-3 bg-black text-white mt-4 md:mt-0 hover:bg-yellow-900 hover:opacity-95 hover:text-white uppercase tracking-wider">Explore all ebooks</a>
+        <a href="ebooks.html" class="inline-block px-9 py-3 bg-black text-white mt-4 md:mt-0 hover:bg-yellow-900 hover:opacity-95 hover:text-white uppercase tracking-wider">Explore all ebooks</a>
     </div>
 
 </section>
@@ -78,7 +76,8 @@ seo:
     <div class="p-5 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
 
         {% for preset in featuredPreset offset: 1 limit:3 %}
-            
+        
+        <a href="{{preset.url}}">
             <div class="bg-stone-100 p-5p">
                 <img src="{{preset.product_path}}" alt="{{preset.alt}}" class="object-cover w-full h-72" />
                 <div class="grid grid-cols-2 p-1">
@@ -86,16 +85,14 @@ seo:
                     <h3 class="text-right">${{preset.price}}</h3>
                 </div>
             </div>
-
+        </a>
         {% endfor %}
 
     </div>
-        <!-- shop all ebooks button -->
+        <!-- shop all presets button -->
 
         <div class="leading-loose p-5p">
-            <h2 class="">{{ebook.title}}</h2>
-            <p>{{ebook.description_html}}</p>
-            <a href="#" class="inline-block px-9 py-3 bg-black text-white mt-4 md:mt-0 hover:bg-yellow-900 hover:opacity-95 hover:text-white uppercase tracking-wider">Explore all ebooks</a>
+            <a href="presets.html" class="inline-block px-9 py-3 bg-black text-white mt-4 md:mt-0 hover:bg-yellow-900 hover:opacity-95 hover:text-white uppercase tracking-wider">Explore all Presets</a>
         </div>
 
 </section>
