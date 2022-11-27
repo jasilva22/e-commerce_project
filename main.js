@@ -56,3 +56,37 @@ buttons.forEach(button => {
     
   })
 })
+
+// Before/After Slider - Make sure you've added jquery 
+
+$("#ba-slider").on("input change", (e)=>{
+  const sliderPos = e.target.value;
+  // Update the width of the foreground image
+  $('.ba-foreground-img').css('width', `${sliderPos}%`)
+  // Update the position of the slider button
+  $('.ba-slider-button').css('left', `calc(${sliderPos}% - 18px)`)
+});
+
+// Before/After Slider 
+
+const sliderButton = document.querySelectorAll('.sliderButton');
+const sliderSections = document.querySelectorAll('.sliderSection');
+
+
+function sliderSelector() {
+
+  let targetExpandableDiv = this.dataset.targetButton;
+  sliderSections.forEach(section => {
+      if (targetExpandableDiv == section.dataset.targetMore) {
+        section.classList.remove('collapse');
+      } 
+      else {
+        section.classList.add('collapse')
+      }
+    })
+
+}
+
+sliderButton.forEach( button => {
+  button.addEventListener('click', sliderSelector)
+})

@@ -12,6 +12,7 @@ before_path:
     https://cdn.shopify.com/s/files/1/0054/8614/9703/products/Happy_New_Year-78_1000x.jpg?v=1590945330
 beforealt: 
 after_path: 
+    https://i.etsystatic.com/36646687/r/il/3fd1c0/4090720723/il_1588xN.4090720723_khcl.jpg
 afteralt: 
 video_path: https://www.youtube.com/embed/-cyeGMkTYOk
 featured: true

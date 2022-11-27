@@ -17,10 +17,9 @@ seo:
     {% assign featuredEbooks = ebooks | where: 'featured', 'true' %}
     {% for ebook in featuredEbooks limit:1 %}
     <a href="{{ebook.url}}">
-        <div class="relative">
+        <div class="relative md:h-full">
             <img src="{{ebook.product_path}}" alt="{{ebook.alt}}" class="md:absolute object-cover object-center w-full h-72 md:h-full">
             <div class="absolute bottom-0 left-0 right-0 top-0 hover:bg-white opacity-30"></div>
-            
         </div>
 
         <div class="leading-loose p-5p">

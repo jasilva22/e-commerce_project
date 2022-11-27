@@ -52,24 +52,31 @@ video_path: https://www.youtube.com/embed/-FYAJ1Jw2CI
 <!-- Similar loop to above, but this time we are pulling the name, before image and after image. 
 Then we’ll use javascript to make it into before / after slider. When you click on the presets on the left hand size, it changes the image on the right.  -->
 
-<section class="p-5p">
+<section class="p-5p ">
 
     <div class="grid grid-cols-8 pt-5p gap-4 items-center">
 
-        {% for example in featuredPreset limit:1 %}
-
-        <div class="col-span-1">
-            <p><a href="">{{example.title}}</a></p>
+        
+        <div class="col-span-1 text-center">
+            {% for example in featuredPreset limit:4 %}
+            <p class="sliderButton cursor-pointer" data-target-button={{forloop.index}}>{{example.title}}</p>
+            {% endfor %}
         </div>
-
+        
         <div class="col-span-7">
-            <img src="{{example.before_path}}" alt="example.beforealt" class="object-cover w-full h-[50vh]">
+            {% for example in featuredPreset %}
+            <div class="sliderSection {% unless forloop.index == 1 %} collapse {% endunless %}" data-target-more="{{forloop.index}}">
+        <div class="ba-container">
+            <!-- <img src="{{example.before_path}}" alt="example.beforealt" class="ba-img ba-background-img">
+            <img src="{{example.after_path}}" alt="example.afteralt" class="ba-img ba-background-img"> -->
             <!-- <img src="{{example.after_path}}" alt="example.afteralt" class="object-cover w-full h-[50vh]"> -->
-
-            <!-- hiding this image and limiting loop to one until we have javascript info -->
+            <div class='ba-img ba-background-img' style="background-image: url({{example.before_path}});"></div>
+            <div class='ba-img ba-foreground-img' style="background-image: url({{example.after_path}});"></div>
+            <input type="range" min="1" max="100" value="50" class="ba-slider" name='ba-slider' id="ba-slider">
+            <div class='ba-slider-button'></div>
         </div>
-
-        {% endfor %}
+        </div>
+            {% endfor %}
 
     </div>
 </section>
