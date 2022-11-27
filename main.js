@@ -30,6 +30,8 @@ dropDownButtons.forEach( button => {
   button.addEventListener('click', dropDownAnswer)
 })
 
+// Slider Javascript
+
 $('.slider-container').slick({
 	autoplay: false, // Do we want it to autoplay? true or false
 	autoplaySpeed: 2000, // How long between each slide when auto-playing
@@ -42,3 +44,15 @@ $('.slider-container').slick({
 	pauseOnHover: false, // When true means the autoplay pauses when hovering
 	pauseOnDotsHover: true, // Pauses the autoplay when hovering over the dots
 });
+
+// Mobile Nav Script
+const buttons = document.querySelectorAll(".hamburger-button");
+
+const mobile = document.querySelector(".mobile-menu");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    mobile.classList.toggle("collapse");
+    
+  })
+})

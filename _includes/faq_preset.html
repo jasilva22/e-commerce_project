@@ -1,21 +1,25 @@
-<section class="p-5p text-center">
-    
-    <h3 class="">Frequently Asked Questions</h3>
+<section class="pt-6">
+    <h3 class="text-center pb-6">Frequently Asked Questions</h3>
 
-    <!-- Presets Facts Loop -->
+    <!-- EBook Facts Loop -->
 
     {% assign faqs = site.data.faqs %}
     {% assign presetFaqs = faqs | where: 'type', 'preset' %}
 
-    <h2>Presets FAQs</h2>
-    
-    {% for item in presetFaqs%}
+    <!-- <h2>E-Book FAQs</h2> -->
+    <div class="bg-white p-5p pt-0">
 
-    <div>
-        <h3>{{item.question}}</h3>
-        <p>{{item.answer}}</p>
-    </div>
+    {% for item in presetFaqs%}
+        <div class="">
+            <button class="flex justify-between expandButton p-6 bg-stone-100 cursor-pointer w-full hover:bg-stone-200" data-target-button="{{forloop.index}}">
+                <h3 class="text-left">{{item.question}}</h3>
+            </button>
+            <div class="expandable collapse p-6" data-target-more="{{forloop.index}}">
+                <p>{{item.answer}}</p>
+            </div>
+        </div>
+    
 
     {% endfor %}
-
+    </div>
 </section>

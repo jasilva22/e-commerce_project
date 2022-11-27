@@ -12,16 +12,16 @@
     @apply font-nunito;
 } */
 
-.hidden {
+/* .hidden {
     display: none;
-}
+} */
 
 .expandButton::after {
     content: '\02795';
 }
 
 .active::after {
-    content: "\2212";
+    content: '\2212';
   }
 
   .expandable {
@@ -49,6 +49,12 @@
     color: black;
 }
 
+.hamburger-button {
+    font-size: 2rem;
+}
+.mobile-menu:active {
+    display: block;
+}
 /* .slick-next::before, .slick-prev::before {
     ...
     color: rgb(90, 90, 90);

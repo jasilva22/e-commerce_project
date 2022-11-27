@@ -1,21 +1,40 @@
 <!-- header that holds the logo, search and nav bar w/categories -->
 <header>
 
-    <div class="grid grid-cols-2 items-center p-7 pb-6">
+    <div class="grid grid-cols-2 items-center p-7 pb-6 border-b border-black">
   
       <!-- logo for the nav bar -->
       <div class="grid justify-left">
         <a href="/shop.html" class="logo text-6xl font-extralight hover:text-cyan-600"> LOGO </a>
       </div>
 
-      <div class="grid justify-end">
-        <div class="inline-block font-light p-2">
-          <a href="/shop.html" class="px-6">Home</a>
-          <a href="/ebooks.html" class="px-6">E-books</a>
-          <a href="/presets.html" class="px-6">Presets</a>
-        </div>
+      <nav id="site-menu" class="grid justify-end text-right hidden md:block font-light p-2">
+          <a href="/shop.html" class="px-5 hover:text-cyan-600">Home</a>
+          <a href="/ebooks.html" class="px-5 hover:text-cyan-600">E-books</a>
+          <a href="/presets.html" class="px-5 hover:text-cyan-600">Presets</a>
+          <a href="/presets.html" class="px-5 hover:text-cyan-600">Contact</a>
+      </nav>
+
+      <div class="grid justify-end md:hidden">
+        <button class="hamburger-button md:hidden active:text-cyan-900 hover:text-cyan-600 cursor-pointer inline-block z-10"> &#9776; </button>
       </div>
-  
+
+  </header> 
+
+   <div class="bg-cyan-600 p-5p fixed inset-0 text-center collapse mobile-menu transition-all z-10"> 
+      <nav> 
+        <div class="static mb-12">
+          <button class="hamburger-button absolute top-8 right-8 text-white active:text-red-400">x</button>
+        </div>
+        <a href="/shop.html" class="block text-white p-6 hover:bg-white hover:text-cyan-600 active:text-red-400">Home</a>
+        <a href="/ebooks.html" class="block text-white p-6 hover:bg-white hover:text-cyan-600 active:text-red-400"> E-books</a>
+        <a href="/presets.html" class="block text-white p-6 hover:bg-white hover:text-cyan-600 active:text-red-400">Presets</a>
+        <a href="/contact.html" class="block text-white p-6 hover:bg-white hover:text-cyan-600 active:text-red-400">Contact</a>
+      </nav>
+    </div>  
+
+
+
       <!-- search icon -->
       <!-- <div class="grid justify-end">
         <a href="/search.html" class="">
@@ -24,42 +43,3 @@
           </svg>
         </a>
       </div> -->
-   
-    </div> 
-
-    <!-- <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-      <div class="container flex flex-wrap items-center justify-between mx-auto">
-        <a href="/shop.html" class="flex items-center">Logo</a>
-        
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
-              <a href="#" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav> -->
-  
-    <!-- nav bar that pulls in the links from the categories in archives folder -->
-    <div class="flex items-center md:justify-center border-y border-black md:overflow-x-auto overflow-x-scroll md:flex-wrap flex-nowrap font-light p-2">
-      {% for item in site.archives %}
-       
-          <a href="{{item.url}}" class="uppercase font-extralight p-2 px-8 inline-block hover:text-gray-400">{{item.title}}</a>
-      
-      {% endfor %}
-  
-    </div>
-  </header>
