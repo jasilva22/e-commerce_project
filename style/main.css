@@ -25,10 +25,6 @@ a {
   @apply hover:text-trueGray-100 tracking-wide;
 }
 
-.copyright {
-  font-size: .5rem;
-}
-
 .capped-width {
   max-width: 1200px;
 }
