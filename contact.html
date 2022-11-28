@@ -1,0 +1,108 @@
+---
+layout: default
+title: Contact Us
+seo:
+ title:
+ meta-description:
+ meta-keywords:
+ featured-image_path:
+ hide-from-google:
+---
+
+
+<!-- banner w/overlay and white text centered -->
+<!-- <div class="relative h-full">
+    <img src="https://img.freepik.com/free-photo/smooth-stucco-wall_1194-7087.jpg?w=1380&t=st=1669552898~exp=1669553498~hmac=15c257897f569f4a068a928050c4bddb1e0a3641dd91ff9d9f095ae118484266" alt="" class="object-cover w-full h-full">
+    <div class="absolute bottom-0 left-0 right-0 top-0">
+        <h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl text-white"> Don't call us, we'll call you...</h1>
+    </div>
+</div> -->
+<section class="bg-stone-100 p-5p">
+    <div class="grid md:grid-cols-2 items-center">
+        <div>
+            <form id="myForm" action="contact.html" method="get" class="p-5p"> <!--return needs to be there bc we're returning false-->
+            
+            <div id="center" class="uppercase font-bold text-redPop-100 opacity-70"><h3>Contact Us</h3></div>
+            <div class="uppercase pb-6 font-semibold pt-6 text-redPop-100 opacity-70">name:</div>
+            <input id="name" type="text" name="fullname" placeholder="Enter Full Name" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+            focus:outline-none focus:border-redPop-100"><span></span>
+                
+            <div class="uppercase pt-2 pb-4 font-semibold text-redPop-100 opacity-70">Love Presets??</div>
+            <span class="text-inherit pr-2 pl-0">Yes</span><input type="radio" name="gender" value="male"><span></span>
+            <span class="text-inherit pr-2 pl-0">Hell yes</span><input type="radio" name="gender" value="female"><span></span>
+                
+            <div class="uppercase pt-6 pb-4 font-semibold text-redPop-100 opacity-70">hobbies</div>
+            Travel <input type="checkbox" id="hobbies" name="hobby" value="baseball"><span></span><br>
+            Photography <input type="checkbox" id="hobbies" name="hobby" value="football"><span></span><br>
+            Shenanigans <input type="checkbox" id="hobbies" name="hobby" value="hockey"><span></span><br>
+            <span></span>
+                
+            <div class="uppercase pt-2 pb-4 font-semibold text-redPop-100 opacity-70">country you'd like to visit:</div> 
+            <select id="selectCountry" name="selectCountry">
+                <option value="">Choose Country</option>
+            </select><span></span>
+                
+            <div class="uppercase pt-8 pb-4 font-semibold text-redPop-100 opacity-70">comments</div>
+            <textarea cols="50" rows="6" name="comments" class="mt-1 block w-full py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+            focus:outline-none focus:border-redPop-100"></textarea><span></span>
+            
+            <input id="send" type="submit" name="submit" value="submit" onclick="return validateMe();" class="uppercase mt-6 p-6 font-semibold bg-redPop-100 opacity-70 text-white hover:opacity-40">
+        </form>
+        </div>
+        <div>
+            <div class="">
+                <h3 class="text-center text-redPop-100 opacity-70">Let's Connect!</h3>
+                <img src="/assets/images/mapscropped.png" alt="map of bali" class="mt-4">
+            </div>
+            <div class="pt-6">
+                <h2 class="font-bold text-3xl">LOGO</h2>
+                <p class="pt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione autem incidunt temporibus at quod iure reprehenderit iste vero sequi, pariatur totam accusantium, perferendis odit, officiis fugit doloribus saepe repudiandae natus?</p>
+              </div>
+              <div class="grid grid-rows-2 justify-end py-6">
+                <nav class="primary-links">
+                  <a href="#">Lorem ipsum</a> |
+                  <a href="#">Dolor sit</a> |
+                  <a href="#">Consectetur</a>
+                </nav>
+                <nav class="text-2xl inline-block text-right text-redPop-100 opacity-70">
+                  <a href="#">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    </a>
+                  <a href="#">
+                    <i class="fa-brands fa-square-instagram"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa-brands fa-square-youtube"></i>
+                  </a>
+                </nav>
+              </div>
+        </div>
+</section>
+
+<script>
+    var select = document.getElementById("selectCountry");
+    
+    var countries = new Array("Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burma", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo, Democratic Republic", "Congo, Republic of the", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Greenland", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, North", "Korea, South", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Mongolia", "Morocco", "Monaco", "Mozambique", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Samoa", "San Marino", " Sao Tome", "Saudi Arabia", "Senegal", "Serbia and Montenegro", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe");
+        
+    for (var i = 0; i < countries.length; i++) {
+        
+        var option = document.createElement("option"); 
+      //for every turn of the loop create an option tag
+        var txt = document.createTextNode(countries[i]); 
+      //for every turn of the loop create the inner text
+        option.appendChild(txt); 
+      //for every turn of the loop put the words from txt inside the <option> tags
+        option.setAttribute("value",countries[i]); //for every turn of the loop set the value attribute to corresponding country name
+        select.insertBefore(option,select.lastChild);
+        //console.log(select);
+    }
+    
+    // document.addEventListener ('DOMContentLoaded', function() {
+    //     document.querySelector('select[name="selectCountry"]').onchange = alertCountry;
+    //      }, false);
+        
+    // function alertCountry(event) {
+    //     if(!event.target.value) alert('Please select a country');
+    //     else alert('You chose ' + event.target.value + '. Yay, grab a beer!');
+    // }
+</script>

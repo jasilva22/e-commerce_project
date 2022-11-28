@@ -7,6 +7,29 @@
         @apply inline-block p-6 bg-blue-600 text-white hover:bg-blue-800 transition;
     }
 }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @apply font-sans text-trueGray-900;
+}
+
+h2, h3, h4 {
+  @apply uppercase text-lg tracking-wide;
+}
+
+a {
+  @apply hover:text-trueGray-100 tracking-wide;
+}
+
+.capped-width {
+  max-width: 1200px;
+}
+
+
 
 /* h2 {
     @apply font-nunito;
@@ -37,6 +60,8 @@
       padding: 0;
   }
 
+  /* Testimonial Styles */
+
  .slider-container {
      max-width: calc(100vw - 10rem);
  }
@@ -46,7 +71,7 @@
     font-size: 36px;
     line-height: 1;
     opacity: .75;
-    color: black;
+    color: #960000;
 }
 
 .hamburger-button {
@@ -55,18 +80,9 @@
 .mobile-menu:active {
     display: block;
 }
-/* .slick-next::before, .slick-prev::before {
-    ...
-    color: rgb(90, 90, 90);
-} */
 
 /* Before/After Slider Styles */
-/* html {
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  } */
+
   
   .ba-container {
     position: relative;
@@ -148,5 +164,31 @@
     border: solid #5D5D5D;
     border-width: 0 2px 2px 0;
     transform: rotate(135deg);
+  }
+  
+  /* Form Styles */
+
+  #center {
+    display: flex;
+    position: relative;
+    justify-content: center;
+  }
+  #myForm {
+    max-width: 500px;
+    margin: 2rem auto;
+    border-radius: 6px;
+    #name, #show, textarea {
+      display: block;
+      width: 96.5%;
+    }
+  }
+  span {
+    color: rgb(19, 152, 175);
+    opacity: .8;
+    padding-left: .5rem;
+  }
+  #send {
+    width: 100%;
+    border-radius: 4px;
   }
   

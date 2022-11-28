@@ -1,35 +1,35 @@
 <!-- header that holds the logo, search and nav bar w/categories -->
-<header>
+<header class="px-5p py-7 border-b border-opacity-60">
 
-    <div class="grid grid-cols-2 items-center p-7 pb-6 border-b border-black">
+    <div class="grid grid-cols-2 items-center">
   
       <!-- logo for the nav bar -->
       <div class="grid justify-left">
-        <a href="/shop.html" class="logo text-6xl font-extralight hover:text-cyan-600"> LOGO </a>
+        <a href="/shop.html" class="logo text-6xl font-bold hover:text-trueGray-100"> LOGO </a>
       </div>
 
-      <nav id="site-menu" class="grid justify-end text-right hidden md:block font-light p-2">
-          <a href="/shop.html" class="px-5 hover:text-cyan-600">Home</a>
-          <a href="/ebooks.html" class="px-5 hover:text-cyan-600">E-books</a>
-          <a href="/presets.html" class="px-5 hover:text-cyan-600">Presets</a>
-          <a href="/presets.html" class="px-5 hover:text-cyan-600">Contact</a>
+      <nav id="site-menu" class="grid justify-end text-right hidden md:block tracking-wide font-semibold uppercase p-2">
+          <a href="/shop.html" class="px-5">Home</a>
+          <a href="/ebooks.html" class="px-5">E-books</a>
+          <a href="/presets.html" class="px-5">Presets</a>
+          <a href="/contact.html" class="px-5 md:hidden lg:inline-block">Contact</a>
       </nav>
 
       <div class="grid justify-end md:hidden">
-        <button class="hamburger-button md:hidden active:text-cyan-900 hover:text-cyan-600 cursor-pointer inline-block z-10"> &#9776; </button>
+        <button class="hamburger-button md:hidden active:text-yellow-900 hover:text-trueGray-100 cursor-pointer inline-block z-10"> &#9776; </button>
       </div>
 
   </header> 
 
-   <div class="bg-cyan-600 p-5p fixed inset-0 text-center collapse mobile-menu transition-all z-10"> 
+   <div class="bg-trueGray-100 p-5p fixed inset-0 text-center collapse mobile-menu transition-all z-10"> 
       <nav> 
         <div class="static mb-12">
-          <button class="hamburger-button absolute top-8 right-8 text-white active:text-red-400">x</button>
+          <button class="hamburger-button absolute top-8 right-8 text-white active:text-redPop-100">x</button>
         </div>
-        <a href="/shop.html" class="block text-white p-6 hover:bg-white hover:text-cyan-600 active:text-red-400">Home</a>
-        <a href="/ebooks.html" class="block text-white p-6 hover:bg-white hover:text-cyan-600 active:text-red-400"> E-books</a>
-        <a href="/presets.html" class="block text-white p-6 hover:bg-white hover:text-cyan-600 active:text-red-400">Presets</a>
-        <a href="/contact.html" class="block text-white p-6 hover:bg-white hover:text-cyan-600 active:text-red-400">Contact</a>
+        <a href="/shop.html" class="block text-white p-6 hover:bg-white hover:text-yellow-900 active:text-redPop-100">Home</a>
+        <a href="/ebooks.html" class="block text-white p-6 hover:bg-white hover:text-yellow-900 active:text-redPop-100"> E-books</a>
+        <a href="/presets.html" class="block text-white p-6 hover:bg-white hover:text-yellow-900 active:text-redPop-100">Presets</a>
+        <a href="/contact.html" class="block text-white p-6 hover:bg-white hover:text-yellow-900 active:text-redPop-100">Contact</a>
       </nav>
     </div>  
 
