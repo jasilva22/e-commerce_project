@@ -12,7 +12,7 @@ seo:
 
 <!-- featured product section -->
 
-<section class="grid md:grid-cols-2 p-5p">
+<section class="grid md:grid-cols-2 py-5p container">
 
     {% assign ebooks = site.products-ebooks %}
     {% assign featuredEbooks = ebooks | where: 'featured', 'true' %}
@@ -20,7 +20,7 @@ seo:
         <a href="{{ebook.url}}">
             <div class="relative md:h-full">
                 <img src="{{ebook.product_path}}" alt="{{ebook.alt}}" class="md:absolute object-cover object-center w-full h-72 md:h-full">
-                <div class="absolute bottom-0 left-0 right-0 top-0 hover:bg-white hover:opacity-5"></div>
+                <div class="absolute bottom-0 left-0 right-0 top-0 hover:bg-white hover:opacity-30"></div>
             </div>
         </a>
 
@@ -38,14 +38,14 @@ seo:
 
 </section>
 
-<!-- most popular/featured EBOOKS section -->
+<!-- Most Popular EBOOKS section -->
 
-<section class="bg-stone-100 p-5p">
+<section class="bg-stone-100">
 
-    <h2 class="text-center font-bold text-xl pb-5p">Most Popular E-books</h2>
+    <h2 class="text-center font-bold text-xl py-5p">Most Popular E-books</h2>
 
     <!-- div to make our ebook "cards" - includes img, title, price -->
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 container">
 
         {% for ebook in featuredEbooks offset: 1 limit:3 %}
             <a href="{{ebook.url}}">
@@ -55,7 +55,7 @@ seo:
                         <h3> {{ebook.title}} </h3>
                         <h3 class="text-right">${{ebook.price}}</h3>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 top-0 hover:bg-white opacity-5"></div>
+                    <div class="absolute bottom-0 left-0 right-0 top-0 hover:bg-white opacity-30"></div>
                 </div>
             </a>
 
@@ -65,7 +65,7 @@ seo:
 
     <!-- shop all ebooks button -->
 
-    <div class="py-5p">
+    <div class="py-5p container">
         <a href="{{ebook.url}}" class="inline-block px-9 py-3 bg-opacity-70 bg-redPop-100 text-white mt-6 hover:bg-black hover:opacity-50 hover:text-white uppercase tracking-wide">Explore all e-books</a>
     </div>
 
@@ -75,13 +75,13 @@ seo:
 
 <section class="p-5p">
 
-    <h2 class="text-center font-bold text-xl pb-5p">Most Popular Presets</h2>
+    <h2 class="text-center font-bold text-xl py-5p">Most Popular Presets</h2>
 
     {% assign presets = site.products-presets %}
     {% assign featuredPreset = presets | where: 'featured', 'true' %}
 
     <!-- div to make our preset "cards" - includes img, title, price -->
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 container">
 
         {% for preset in featuredPreset offset: 1 limit:3 %}
         
@@ -101,7 +101,7 @@ seo:
     </div>
         <!-- shop all presets button -->
 
-        <div class="py-5p">
+        <div class="py-5p container">
             <a href="presets.html" class="inline-block px-9 py-3 bg-opacity-70 bg-redPop-100 text-white mt-6 hover:bg-black hover:opacity-50 hover:text-white uppercase tracking-wider">Explore all Presets</a>
         </div>
 
