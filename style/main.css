@@ -90,9 +90,10 @@ a {
     background-size: 90vw;
     background-position: left;
   }
-  .ba-background-img {
-    /* background-image: url('https://images.unsplash.com/photo-1523538290088-51e3e7d1c00d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80'); */
-  }
+  /* .ba-background-img {
+    background-image: url('https://images.unsplash.com/photo-1523538290088-51e3e7d1c00d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80');
+  } */
+  
   .ba-foreground-img {
     /* background-image: url('https://images.unsplash.com/photo-1532347922424-c652d9b7208e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2639&q=80'); */
     width: 50%;
@@ -167,16 +168,19 @@ a {
     max-width: 500px;
     margin: 2rem auto;
     border-radius: 6px;
-    #name, #show, textarea {
+  }
+
+  #name, #show, textarea {
       display: block;
       width: 96.5%;
     }
-  }
+  
   span {
     color: rgb(19, 152, 175);
     opacity: .8;
     padding-left: .5rem;
   }
+
   #send {
     width: 100%;
     border-radius: 4px;

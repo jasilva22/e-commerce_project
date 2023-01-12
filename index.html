@@ -6,3 +6,67 @@ title: Homepage
 
 
 <!-- for now, our "home" page is the shop.html page -->
+
+<!-- change img on hover -->
+<section>
+<div class="grid h-auto py-5p place-items-center">
+    <div class="h-96 w-96 relative group">
+      <div class="h-96 w-96 bg-center bg-no-repeat bg-cover group-hover:opacity-0 transition-opacity duration-200 ease-in-out bg-[url('https://source.unsplash.com/random/1')]"></div>
+      <div class="h-96 w-96 opacity-0 group-hover:opacity-100 bg-center bg-no-repeat bg-cover absolute top-0 left-0 transition-opacity duration-200 ease-in-out" style="background-image:url('https://source.unsplash.com/random/2')"></div>
+    </div>
+  </div>
+  </section>
+<!-- can do background images 2 ways - w/the class of bg-[url('https://source.unsplash.com/random/1')] or style="background-image:url('https://source.unsplash.com/random/1')" you just have to be very aware of your ' and "'s, depending on which you're using for class="" or class='' -->
+
+<!-- opacity on hover -->
+  <section>
+      <div class="grid h-auto py-5p place-items-center">
+          <div class="h-96 w-96 relative group">
+              <div class="h-96 w-96 bg-center bg-no-repeat bg-cover group-hover:opacity-50 transition-opacity duration-200 ease-in-out" style="background-image:url('https://source.unsplash.com/random/3')">
+            </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- opacity on hover w/border & text-->
+  <section>
+    <div class="grid h-auto py-5p place-items-center">
+        <div class="relative overflow-hidden bg-no-repeat bg-cover h-96 w-96" style="background-position: 50%;">
+            <img src="https://mdbootstrap.com/img/Photos/Others/mewa.jpg" class="w-full" />
+            <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed hover:transition-opacity duration-200 ease-in-out hover:bg-white opacity-0 hover:opacity-80 hover:border-16 text-center flex items-center justify-center"><p class="opacity-70">text here on hover</p>
+                <!-- <p class="text-center opacity-0 hover:opacity-80 transition-opacity duration-200">text here on hover</p> -->
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- overlay on hover w/text & button -->
+  <section>
+    <div class="flex items-center justify-center">
+        <a class="relative block w-1/4 bg-gray-900 group" href="#">
+          <img class="absolute inset-0 object-cover w-full h-full group-hover:opacity-50"
+            src="https://cdn.pixabay.com/photo/2021/10/30/08/07/desert-6753729__340.jpg" alt="" />
+          <div class="relative p-2">
+            <div class="mt-40">
+              <div class="transition-all transform translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                <div class="p-2">
+                  <p class="text-sm text-white">
+                    image hover in text using tailwind css
+                  </p>
+                  <button class="px-4 py-2 text-sm text-white bg-indigo-600">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+  </section>
+
+  <!-- hero image w/overlay and text -->
+  <section>
+    <div class='bg-[url("https://source.unsplash.com/random/3")] h-96 w-full object-fill py-32 px-20'>
+        <h1 class="text-3xl font-bold text-white">This is image Overlay header</h1>
+        <p class="text-lg text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, minus nihil rem incidunt aspernatur eum veniam exercitationem corporis error corrupti. Laudantium harum rerum dignissimos?
+        Repudiandae aspernatur nam sit voluptatibus ipsa?</p>
+    </div>
+  </section>

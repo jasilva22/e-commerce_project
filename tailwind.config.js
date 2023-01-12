@@ -31,6 +31,9 @@ module.exports = {
           50: '#fdf8f6',
         },
       },
+      borderWidth: {
+        '16': '16px',
+      },
     },
     fontFamily: {
       serif: ['Merriweather', 'serif'],
