@@ -1,19 +1,22 @@
 <footer class="border-t border-black">
+
+    <!-- this div wraps all the columns together -->
     <div class="h-full grid grid-cols-2 md:grid-cols-3 items-center">  
-      <!-- column -->
-        <div class="grid items-center justify-center border-r border-black h-full">
+      
+        <!-- logo column -->
+        <div class="flex items-center justify-center border-r border-black h-full">
           <a href="/shop.html">
             <h2 class="font-bold text-3xl"> Logo </h2>
           </a>
         </div>
       
-        <!-- column -->
-        <div class="self-end pb-4 md:block hidden">
+        <!-- copyright column -->
+        <div class="self-end md:block hidden pb-6">
           <h4 class="text-center font-thin italic">Copyright 2022 </h4>
         </div>
       
-        <!-- column -->
-        <div class="p-10 md:border-l border-black items-center">
+        <!-- socials column -->
+        <div class="p-12 md:border-l border-black items-center">
           <h4 class="uppercase font-semibold text-center"> holler on the socials </h4>
           <nav class="flex text-3xl text-redPop-100 opacity-70 justify-center">
             <a href="#" class="px-1">
@@ -28,6 +31,8 @@
           </nav>
         </div>
     </div>
+
+    <!-- copyright for small screens - drops down below logo/socials -->
     <div class="border-t border-black md:hidden text-center p-4">
       <h5 class="text-sm font-thin italic uppercase">
         Copyright 2022
