@@ -12,7 +12,7 @@ title: Shop All eBooks
         </div>
 
         <div class="leading-loose ml-12">
-            <h2 class="">Intro/Sales Pitch Here</h2>
+            <h2 class="font-bold pb-4">Intro/Sales Pitch Here</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus recusandae beatae distinctio explicabo deleniti eveniet cupiditate repudiandae exercitationem quia. A illum minima quae, nobis suscipit ullam asperiores itaque blanditiis perferendis nisi obcaecati velit molestias nam sequi quo adipisci natus culpa.</p>
         </div>
 
@@ -26,13 +26,13 @@ title: Shop All eBooks
     {% assign ebooks = site.products-ebooks %}
     {% assign featuredEbooks = ebooks %}
 
-    <h2 class="text-center">Most Popular Ebooks</h2>
+    <h2 class="text-center font-bold pb-8">Most Popular Ebooks</h2>
 
     <!-- div to make our ebook "cards" - includes img, title, price -->
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
 
         {% for ebook in featuredEbooks limit:9 %}
-            
+        <a href="{{ebook.url}}">    
             <div class="bg-white p-5p">
                 <img src="{{ebook.product_path}}" alt="{{ebook.alt}}" class="object-cover w-full h-72" />
                 <div class="grid grid-cols-2 p-1">
@@ -40,7 +40,7 @@ title: Shop All eBooks
                     <h3 class="text-right">${{ebook.price}}</h3>
                 </div>
             </div>
-
+        </a>
         {% endfor %}
 
     </div>
@@ -65,9 +65,9 @@ title: Shop All eBooks
             <img src="{{ebook.sneakpeek_path}}" alt="{{ebook.sneakpeek_alt}}" class="md:absolute object-cover w-full h-full">
         </div>
 
-        <div class="leading-loose p-5p">
-                <h2 class="">{{ebook.title}}</h2>
-                <p>{{ebook.description_html}}</p>
+        <div class="leading-loose pt-5p md:pl-5p">
+                <h2 class="font-bold border-b lg:border-none">{{ebook.title}}</h2>
+                <p class="mt-4">{{ebook.description_html}}</p>
         </div>
 
         {% endfor %}
@@ -77,7 +77,7 @@ title: Shop All eBooks
 
 <!-- Testimonials Section -->
 
-<section class="h-64 grid items-center bg-stone-100">
+<!-- <section class="h-64 grid items-center bg-stone-100">
     
     {% assign testimonials = site.data.testimonials %}
     {% assign ebookTestimonials = testimonials | where: 'product-type', 'ebook' %}
@@ -90,7 +90,9 @@ title: Shop All eBooks
 
     {% endfor %}
 
-</section>
+</section> -->
+
+{% include testimonials.html %}
 
 <!-- FAQs Section -->
 

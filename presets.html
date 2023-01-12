@@ -12,7 +12,7 @@ video_path: https://www.youtube.com/embed/-FYAJ1Jw2CI
         </div>
 
         <div class="leading-loose p-5p">
-            <h2 class="">Intro/Sales Pitch Here</h2>
+            <h2 class="font-bold pb-4">Intro/Sales Pitch Here</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus recusandae beatae distinctio explicabo deleniti eveniet cupiditate repudiandae exercitationem quia. A illum minima quae, nobis suscipit ullam asperiores itaque blanditiis perferendis nisi obcaecati velit molestias nam sequi quo adipisci natus culpa.</p>
         </div>
 
@@ -21,16 +21,15 @@ video_path: https://www.youtube.com/embed/-FYAJ1Jw2CI
 <!-- All/Most Popular Presets Gallery -->
 <!-- in the future if we had more than 9 products we would do pagination - using javascript -->
 
-
 <section class="bg-stone-100 p-5p">
 
-    <h2 class="text-center">Most Popular Presets</h2>
+    <h2 class="text-center font-bold pb-8">Most Popular Presets</h2>
 
     {% assign presets = site.products-presets %}
     {% assign featuredPreset = presets %}
 
     <!-- div to make our preset "cards" - includes img, title, price -->
-    <div class="p-5 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
 
         {% for preset in featuredPreset limit:9 %}
             
@@ -52,7 +51,10 @@ video_path: https://www.youtube.com/embed/-FYAJ1Jw2CI
 <!-- Similar loop to above, but this time we are pulling the name, before image and after image. 
 Then we’ll use javascript to make it into before / after slider. When you click on the presets on the left hand size, it changes the image on the right.  -->
 
-<section class="p-5p ">
+<section class="p-5p">
+
+    <h3 class="text-center">Preview our filter</h3>
+    <p class="text-center italic">drag the arrows to see the effect</p>
 
     <div class="grid grid-cols-8 pt-5p gap-4 items-center">
 
@@ -86,7 +88,7 @@ Then we’ll use javascript to make it into before / after slider. When you clic
 {% include video.html %}
 
 <!-- Testimonials Section -->
-
+<!-- 
 <section class="h-64 grid items-center bg-stone-100">
     
     {% assign testimonials = site.data.testimonials %}
@@ -100,7 +102,9 @@ Then we’ll use javascript to make it into before / after slider. When you clic
 
     {% endfor %}
 
-</section>
+</section> -->
+
+{% include testimonials.html %}
 
 <!-- FAQs Section -->
 
