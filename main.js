@@ -53,14 +53,97 @@ buttons.forEach(button => {
   })
 })
 
-// Before/After Slider - Make sure you've added jquery 
+// Before/After Slider - Make sure you've added jquery - this is flawed b/c it's calling on an id attribute in the presets.html page - inside of the loop, that means the html ends up w/multiple elements with the saem id, which is invalid: here's the response from chatgpt about it ----
 
-$("#ba-slider").on("input change", (e)=>{
-  const sliderPos = e.target.value;
+// You’re using the same id (#ba-slider) inside a loop
+// In your loop, every slider input is:
+
+// <input type="range" min="1" max="100" value="50" class="ba-slider" name='ba-slider' id="ba-slider">
+
+// That means your HTML ends up with multiple elements with the same id, which is invalid. Then this line:
+
+// $("#ba-slider").on("input change", (e)=>{
+
+// only attaches the event listener to the first slider it finds with that ID. So when you interact with any other slider, nothing is listening.
+
+// Your code updates all foreground images & buttons at once
+
+// Inside your event handler:
+
+// $('.ba-foreground-img').css('width', `${sliderPos}%`)
+// $('.ba-slider-button').css('left', `calc(${sliderPos}% - 18px)`)
+
+// Those selectors are global — they target every .ba-foreground-img and .ba-slider-button on the page, not just the ones for the slider you're dragging.
+
+// Right now it "looks" like it works for the first one because:
+
+// Only the first slider has the listener.
+
+// All foreground images update, but only the visible sliderSection shows it.
+
+// HOW TO FIX IT:
+// 1. Remove the id and rely on the class instead
+// In your HTML loop, change this:
+// <input type="range" min="1" max="100" value="50" class="ba-slider" name='ba-slider' id="ba-slider">
+// to
+// <input type="range" min="1" max="100" value="50" class="ba-slider" name="ba-slider">
+// (no id)
+
+// 2. Attach the handler to all sliders, but update only within that container
+// Use jQuery to scope the updates to the current .ba-container.
+
+// Before/After Slider - jQuery version, scoped to each container
+// $(document).on('input change', '.ba-slider', function (e) {
+//   const sliderPos = e.target.value;
+
+  // Limit to THIS slider's container
+  // const $container = $(this).closest('.ba-container');
+
+//   $container.find('.ba-foreground-img').css('width', `${sliderPos}%`);
+//   $container.find('.ba-slider-button').css('left', `calc(${sliderPos}% - 18px)`);
+// });
+
+// This does three important things:
+
+// Uses .ba-slider (a class) instead of #ba-slider (a single ID).
+
+// Uses event delegation with $(document).on(...), which is robust even if sliders are added dynamically.
+
+// Uses closest('.ba-container') so only the matching foreground image and button for that slider are updated.
+
+//previous code from IOC bootcamp - my own doing ---
+
+// $("#ba-slider").on("input change", (e)=>{
+  // const sliderPos = e.target.value;
   // Update the width of the foreground image
-  $('.ba-foreground-img').css('width', `${sliderPos}%`)
+  // $('.ba-foreground-img').css('width', `${sliderPos}%`)
   // Update the position of the slider button
-  $('.ba-slider-button').css('left', `calc(${sliderPos}% - 18px)`)
+//   $('.ba-slider-button').css('left', `calc(${sliderPos}% - 18px)`)
+// });
+
+//chatGPT changes
+
+// Before/After Slider - jQuery version, scoped to each container --- same as below but that one is wrapped in a container - optional but good practice
+// $(document).on('input change', '.ba-slider', function (e) {
+//   const sliderPos = e.target.value;
+
+  // Limit to THIS slider's container
+//   const $container = $(this).closest('.ba-container');
+
+//   $container.find('.ba-foreground-img').css('width', `${sliderPos}%`);
+//   $container.find('.ba-slider-button').css('left', `calc(${sliderPos}% - 18px)`);
+// });
+
+// Before/After Slider - jQuery version, scoped to each container -- same as above but that one is not wrapped in a container. a container is option but good practice - wrap JS so it runs after jquery and DOM are ready - if your script is in the <head> or aboce the HTML wrap it, if at bottom of page or after the hmtl/jquery this is less critical but still fine
+
+$(function () {
+  $(document).on('input change', '.ba-slider', function (e) {
+    const sliderPos = e.target.value;
+    const $container = $(this).closest('.ba-container');
+
+    $container.find('.ba-foreground-img').css('width', `${sliderPos}%`);
+    $container.find('.ba-slider-button').css('left', `calc(${sliderPos}% - 18px)`);
+  });
 });
 
 // Before/After Slider 
